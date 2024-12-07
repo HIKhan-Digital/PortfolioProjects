@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/hajrakhan/Library/Mobile Documents/com~apple~CloudDocs/Data Sources/Portfolio Project.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="8673"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="0" parent="2"/><expanded_item id="3" parent="1"/><expanded_item id="4" parent="1"/></tab_structure><tab_browse><table title="PercentPopulationVacciniated" custom_title="0" dock_id="1" table="4,28:mainPercentPopulationVacciniated"/><dock_state state="000000ff00000000fd0000000100000002000005b20000033ffc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005b20000012900ffffff000003080000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="CovidDeaths" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="3" mode="0"/></sort><column_widths><column index="1" value="66"/><column index="2" value="70"/><column index="3" value="70"/><column index="4" value="70"/><column index="5" value="83"/><column index="6" value="79"/><column index="7" value="152"/><column index="8" value="90"/><column index="9" value="86"/><column index="10" value="159"/><column index="11" value="163"/><column index="12" value="159"/><column index="13" value="232"/><column index="14" value="170"/><column index="15" value="166"/><column index="16" value="239"/><column index="17" value="126"/><column index="18" value="89"/><column index="19" value="169"/><column index="20" value="101"/><column index="21" value="181"/><column index="22" value="161"/><column index="23" value="241"/><column index="24" value="173"/><column index="25" value="253"/><column index="26" value="75"/><column index="27" value="79"/><column index="28" value="177"/><column index="29" value="172"/><column index="30" value="147"/><column index="31" value="245"/><column index="32" value="93"/><column index="33" value="108"/><column index="34" value="88"/><column index="35" value="128"/><column index="36" value="131"/><column index="37" value="166"/><column index="38" value="124"/><column index="39" value="196"/><column index="40" value="219"/><column index="41" value="222"/><column index="42" value="258"/><column index="43" value="276"/><column index="44" value="120"/><column index="45" value="77"/><column index="46" value="133"/><column index="47" value="87"/><column index="48" value="106"/><column index="49" value="105"/><column index="50" value="110"/><column index="51" value="119"/><column index="52" value="157"/><column index="53" value="144"/><column index="54" value="115"/><column index="55" value="102"/><column index="56" value="158"/><column index="57" value="198"/><column index="58" value="111"/><column index="59" value="187"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats><column index="4" value=""/></display_formats><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="CovidVaccinations" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="66"/><column index="2" value="70"/><column index="3" value="70"/><column index="4" value="70"/><column index="5" value="75"/><column index="6" value="79"/><column index="7" value="177"/><column index="8" value="172"/><column index="9" value="147"/><column index="10" value="245"/><column index="11" value="93"/><column index="12" value="108"/><column index="13" value="88"/><column index="14" value="128"/><column index="15" value="131"/><column index="16" value="166"/><column index="17" value="124"/><column index="18" value="196"/><column index="19" value="219"/><column index="20" value="222"/><column index="21" value="258"/><column index="22" value="276"/><column index="23" value="120"/><column index="24" value="133"/><column index="25" value="87"/><column index="26" value="106"/><column index="27" value="105"/><column index="28" value="110"/><column index="29" value="119"/><column index="30" value="157"/><column index="31" value="144"/><column index="32" value="115"/><column index="33" value="102"/><column index="34" value="158"/><column index="35" value="198"/><column index="36" value="111"/><column index="37" value="187"/></column_widths><filter_values><column index="2" value="kingdom"/></filter_values><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="PercentPopulationVacciniated" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="70"/><column index="2" value="70"/><column index="3" value="70"/><column index="4" value="77"/><column index="5" value="124"/><column index="6" value="168"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="temp" name="PercentPopulationVacciniated" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="70"/><column index="2" value="60"/><column index="3" value="37"/><column index="4" value="77"/><column index="5" value="124"/><column index="6" value="171"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">/*
+Covid 19 Data Exploration 
+
+Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+
+*/
+
+
+SELECT *
+From CovidDeaths
+WHERE continent is not NULL
+ORDER BY Location and date
+
+-- Select Data that we are going to be starting with
+
+SELECT 
+location,
+date,
+total_cases,
+new_cases,
+total_deaths,
+population
+FROM CovidDeaths
+WHERE continent is not NULL
+ORDER BY 
+location
+AND
+population
+
+-- Total Cases vs Total Deaths
+-- Shows likelihood of dying if you contract covid in your country
+
+SELECT 
+location,
+date,
+total_cases,
+total_deaths,
+(total_deaths * 1.0 /total_cases)*100 as DeathPercentage
+FROM CovidDeaths
+WHERE 
+location like &quot;%kingdom%&quot;
+AND
+continent is not NULL
+ORDER BY location and date
+
+-- Total Cases vs Population
+-- Shows what percentage of population infected with Covid
+
+SELECT 
+location,
+date,
+population, 
+total_cases, (total_cases * 1.0 /population)*100 as PercentPopulationInfected 
+FROM CovidDeaths
+-- WHERE location like &quot;%kingdom%&quot;
+WHERE continent is not null
+ORDER BY 
+location 
+AND date
+
+-- Countries with Highest Infection Rate compared to Population
+
+SELECT location,
+population,
+MAX(total_cases) 
+AS HighestInfectionCount, 
+MAX((total_cases * 1.0 /population))*100 
+AS PercentPopulationInfected
+FROM CovidDeaths
+-- WHERE location like &quot;%kingdom%&quot;
+WHERE continent is not null
+GROUP BY 
+location,
+population
+ORDER By PercentPopulationInfected DESC
+
+-- Countries with Highest Death Count per Population
+
+SELECT 
+location, 
+MAX (CAST(total_deaths as INT)) AS TotalDeathCount
+FROM CovidDeaths
+-- WHERE location like &quot;%kingdom%&quot;
+WHERE continent is not null
+GROUP BY 
+location,
+population
+ORDER By TotalDeathCount
+DESC
+
+
+-- BREAKING THINGS DOWN BY CONTINENT
+
+-- Showing contintents with the highest death count per population
+
+SELECT 
+location,
+MAX (CAST(total_deaths as INT)) AS TotalDeathCount
+FROM CovidDeaths
+-- WHERE location like &quot;%kingdom%&quot;
+WHERE continent is  NULL
+GROUP BY location
+ORDER By TotalDeathCount 
+DESC
+
+-- Global Numbers 
+
+SELECT 
+SUM(new_cases) AS TotalCases, 
+SUM(CAST(new_deaths AS INT)) AS TotalDeath, 
+(SUM(CAST(new_deaths AS INT)) * 1.0 / SUM(new_cases)) * 100 AS GlobalDeathPercentage
+FROM CovidDeaths
+WHERE continent IS NOT NULL
+--group by date
+ORDER BY 
+date,
+TotalCases
+
+
+-- Total Population vs Vaccinations
+-- Shows Percentage of Population that has recieved at least one Covid Vaccine
+
+
+SELECT 
+dea.continent,
+dea.location,
+dea.date,
+dea.population,
+vac.new_vaccinations,
+SUM (CAST(vac.new_vaccinations as INT))
+OVER
+ (PARTITION BY
+dea.location
+ORDER BY 
+dea.location
+AND 
+dea.date) 
+AS RollingPeopleVaccinated
+-- , (RollingPeopleVacciniated/population)*100
+From CovidDeaths dea
+JOIN CovidVaccinations vac
+ON 
+dea.location = vac.location
+and dea.date = vac.date
+WHERE dea.continent IS NOT NULL
+ORDER BY 
+dea. location
+AND 
+dea. date
+
+
+-- Using CTE to perform Calculation on Partition By in previous query
+
+WITH PopvsVac (continent, location, date, population, new_vaccinations, RollingPeopleVacciniated)
+AS 
+(
+SELECT 
+dea.continent,
+dea.location,
+dea.date,
+dea.population,
+vac.new_vaccinations,
+SUM (CAST(vac.new_vaccinations as INT))
+OVER
+ (PARTITION BY
+dea.location
+ORDER BY 
+dea.location
+AND 
+dea.date) 
+AS RollingPeopleVaccinated
+-- , (RollingPeopleVacciniated/population)*100
+From CovidDeaths dea
+JOIN CovidVaccinations vac
+ON 
+dea.location = vac.location
+and dea.date = vac.date
+WHERE dea.continent IS NOT NULL
+--ORDER BY 
+--dea. location
+--AND 
+--dea. date
+)
+SELECT *, (RollingPeopleVacciniated * 1.0 /population)*100
+FROM PopvsVac
+
+
+-- Using Temp Table to perform Calculation on Partition By in previous query
+
+DROP TABLE if EXISTS PercentPopulationVacciniated,
+Create TEMP TABLE PercentPopulationVacciniated
+(
+continent nvarchar(255),
+location ncarchar(255),
+date datetime,
+population NUMERIC,
+new_vaccinations NUMERIC,
+RollingPeopleVacciniated NUMERIC
+)
+INSERT INTO PercentPopulationVacciniated
+SELECT 
+dea.continent,
+dea.location,
+dea.date,
+dea.population,
+vac.new_vaccinations,
+SUM (CAST(vac.new_vaccinations as INT))
+OVER
+ (PARTITION BY
+dea.location
+ORDER BY 
+dea.location
+AND 
+dea.date) 
+AS RollingPeopleVaccinated
+-- , (RollingPeopleVacciniated/population)*100
+From CovidDeaths dea
+JOIN CovidVaccinations vac
+ON 
+dea.location = vac.location
+and dea.date = vac.date
+WHERE dea.continent IS NOT NULL
+ORDER BY 
+dea. location
+AND 
+dea. date
+
+SELECT *, (RollingPeopleVacciniated * 1.0 /population)*100
+FROM PercentPopulationVacciniated
+
+
+-- Creating View to store data for later visualizations
+
+CREATE VIEW PercentPopulationVacciniated 
+AS
+SELECT 
+dea.continent,
+dea.location,
+dea.date,
+dea.population,
+vac.new_vaccinations,
+SUM (CAST(vac.new_vaccinations as INT))
+OVER
+ (PARTITION BY
+dea.location
+ORDER BY 
+dea.location
+AND 
+dea.date) 
+AS RollingPeopleVaccinated
+-- , (RollingPeopleVacciniated/population)*100
+From CovidDeaths dea
+JOIN CovidVaccinations vac
+ON 
+dea.location = vac.location
+and dea.date = vac.date
+WHERE dea.continent IS NOT NULL
+-- ORDER BY 
+-- dea. location
+-- AND 
+-- dea. date
+
+SELECT*
+FROM
+PercentPopulationVacciniated</sql><current_tab id="0"/></tab_sql></sqlb_project>
